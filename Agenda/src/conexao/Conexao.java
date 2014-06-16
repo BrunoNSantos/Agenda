@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 
-package agenda;
+package conexao;
 
-import conexao.Conexao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -15,15 +14,13 @@ import java.sql.SQLException;
  *
  * @author Bruno
  */
-public class Agenda {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) throws SQLException {
-        Connection conexao = new Conexao().getConnection();
-        System.out.println("Conectado!");
-        conexao.close();
+public class Conexao {
+    public Connection getConnection() {
+        try {
+            return DriverManager.getConnection("jdbc:mysql://localhost/agenda", "root", "admin");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
     
 }
