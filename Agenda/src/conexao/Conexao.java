@@ -15,9 +15,9 @@ import java.sql.SQLException;
  * @author Bruno
  */
 public class Conexao {
-    public Connection getConnection() {
+    public Connection getConexao() {
         try {
-            return DriverManager.getConnection("jdbc:mysql://localhost/agenda", "root", "admin");
+            return DriverManager.getConnection("jdbc:mysql://localhost/agenda", "root", "");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

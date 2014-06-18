@@ -7,6 +7,9 @@
 package agenda;
 
 import conexao.Conexao;
+import dao.ContatoDAO;
+import entidades.contato.Contato;
+import fachada.FachadaSistema;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -21,9 +24,14 @@ public class Agenda {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws SQLException {
-        Connection conexao = new Conexao().getConnection();
-        System.out.println("Conectado!");
-        conexao.close();
+        Contato contato = new Contato();
+        contato.setNome("Humberto");
+        contato.setTelefone1(88321232);
+        //ContatoDAO contatoDAO = new ContatoDAO();
+        //contatoDAO.adicionar(contato);
+        
+        FachadaSistema.getInstance().adicionarContato(contato);
+        System.out.println("Adicionado");
     }
     
 }
