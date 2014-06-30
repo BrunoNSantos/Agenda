@@ -8,6 +8,7 @@ package fachada;
 
 import dao.ContatoDAO;
 import entidades.contato.Contato;
+import java.util.List;
 
 /**
  *
@@ -27,6 +28,18 @@ public class FachadaSistema {
     
     public void adicionarContato(Contato contato){
         this.contatoDAO.adicionar(contato);
+    }
+    
+    public void alterarContato(Contato contato){
+        this.contatoDAO.alterar(contato);
+    }
+    
+    public void excluirContato(Contato contato){
+        this.contatoDAO.excluir(contato);
+    }
+    
+    public List<Contato> listarContatos(){
+        return this.contatoDAO.listarContatos();
     }
     
 }

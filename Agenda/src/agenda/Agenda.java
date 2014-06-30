@@ -13,6 +13,8 @@ import fachada.FachadaSistema;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
+import negocio.GerenciadorContatos;
 
 /**
  *
@@ -24,14 +26,11 @@ public class Agenda {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws SQLException {
-        Contato contato = new Contato();
-        contato.setNome("Humberto");
-        contato.setTelefone1(88321232);
-        //ContatoDAO contatoDAO = new ContatoDAO();
-        //contatoDAO.adicionar(contato);
         
-        FachadaSistema.getInstance().adicionarContato(contato);
-        System.out.println("Adicionado");
-    }
+        GerenciadorContatos gerenciadorContatos = new GerenciadorContatos();
+        List<Contato> contatosEncontrados = gerenciadorContatos.buscarContatoPorNome("si");
+        System.out.println(contatosEncontrados.size());
+        
+    }    
     
 }
