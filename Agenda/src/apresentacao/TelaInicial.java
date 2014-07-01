@@ -9,6 +9,9 @@ package apresentacao;
 import entidades.contato.Contato;
 import fachada.FachadaSistema;
 import java.awt.CardLayout;
+import java.util.Arrays;
+import java.util.List;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -48,6 +51,12 @@ public class TelaInicial extends javax.swing.JFrame {
         entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("agenda?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
         contatoQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT c FROM Contato c");
         contatoList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : contatoQuery.getResultList();
+        contatoQuery1 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT c FROM Contato c");
+        contatoList1 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : contatoQuery1.getResultList();
+        contatoQuery2 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT c FROM Contato c");
+        contatoList2 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : contatoQuery2.getResultList();
+        contatoQuery3 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT c FROM Contato c");
+        contatoList3 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : contatoQuery3.getResultList();
         jPanelMenuLateral = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -100,16 +109,9 @@ public class TelaInicial extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableContatos = new javax.swing.JTable();
         jPanelExcluirContato = new javax.swing.JPanel();
-        jPanelBuscarContantoExcluir = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox();
-        jButton8 = new javax.swing.JButton();
         jPanelExibirContatosExcluir = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList();
+        jListExcluir = new javax.swing.JList();
         jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -536,75 +538,29 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanelPrincipal.add(jPanelListarContatos, "listarContatos");
 
         jPanelExcluirContato.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Excluir Contato", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Agency FB", 0, 18))); // NOI18N
-        jPanelExcluirContato.setLayout(new java.awt.CardLayout());
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel16.setText("Busca de Contato");
-
-        jLabel17.setText("Valor:");
-
-        jLabel18.setText("Tipo de Busca:");
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nome", "Telefone" }));
-
-        jButton8.setText("Buscar");
-
-        javax.swing.GroupLayout jPanelBuscarContantoExcluirLayout = new javax.swing.GroupLayout(jPanelBuscarContantoExcluir);
-        jPanelBuscarContantoExcluir.setLayout(jPanelBuscarContantoExcluirLayout);
-        jPanelBuscarContantoExcluirLayout.setHorizontalGroup(
-            jPanelBuscarContantoExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelBuscarContantoExcluirLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelBuscarContantoExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel16)
-                    .addGroup(jPanelBuscarContantoExcluirLayout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addGap(227, 227, 227)
-                        .addComponent(jLabel18))
-                    .addGroup(jPanelBuscarContantoExcluirLayout.createSequentialGroup()
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(256, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBuscarContantoExcluirLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanelBuscarContantoExcluirLayout.setVerticalGroup(
-            jPanelBuscarContantoExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelBuscarContantoExcluirLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel16)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelBuscarContantoExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel18))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelBuscarContantoExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 207, Short.MAX_VALUE)
-                .addComponent(jButton8))
-        );
-
-        jPanelExcluirContato.add(jPanelBuscarContantoExcluir, "card2");
-
-        jList3.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane4.setViewportView(jList3);
+        DefaultListModel listaExcluir = new DefaultListModel();
+        List<Contato> listaContatos = FachadaSistema.getInstance().listarContatos();
+        for(Contato contatoExcluir: listaContatos){
+            listaExcluir.addElement(contatoExcluir.getNome());
+        }
+        jListExcluir.setModel(listaExcluir);
+        jScrollPane4.setViewportView(jListExcluir);
 
         jButton7.setText("Excluir");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelExibirContatosExcluirLayout = new javax.swing.GroupLayout(jPanelExibirContatosExcluir);
         jPanelExibirContatosExcluir.setLayout(jPanelExibirContatosExcluirLayout);
         jPanelExibirContatosExcluirLayout.setHorizontalGroup(
             jPanelExibirContatosExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 657, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelExibirContatosExcluirLayout.createSequentialGroup()
-                .addGap(0, 539, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanelExibirContatosExcluirLayout.setVerticalGroup(
@@ -616,7 +572,16 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addComponent(jButton7))
         );
 
-        jPanelExcluirContato.add(jPanelExibirContatosExcluir, "card3");
+        javax.swing.GroupLayout jPanelExcluirContatoLayout = new javax.swing.GroupLayout(jPanelExcluirContato);
+        jPanelExcluirContato.setLayout(jPanelExcluirContatoLayout);
+        jPanelExcluirContatoLayout.setHorizontalGroup(
+            jPanelExcluirContatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanelExibirContatosExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jPanelExcluirContatoLayout.setVerticalGroup(
+            jPanelExcluirContatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanelExibirContatosExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         jPanelPrincipal.add(jPanelExcluirContato, "excluirContato");
 
@@ -712,6 +677,22 @@ public class TelaInicial extends javax.swing.JFrame {
         mostrarTelaEditar("editarContatoSelecionado");
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir: "+jListExcluir.getSelectedValue());
+        FachadaSistema.getInstance().excluirContatoPorNome(jListExcluir.getSelectedValue().toString());
+        jPanelExcluirContato.revalidate();
+        jPanelExcluirContato.repaint();
+        
+        DefaultListModel listaExcluir = new DefaultListModel();
+        List<Contato> listaContatos = FachadaSistema.getInstance().listarContatos();
+        for(Contato contatoExcluir: listaContatos){
+            listaExcluir.addElement(contatoExcluir.getNome());
+        }
+        jListExcluir.setModel(listaExcluir);
+        JOptionPane.showMessageDialog(null,"Contato excluido com sucesso");
+        
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -750,7 +731,13 @@ public class TelaInicial extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.util.List<apresentacao.Contato> contatoList;
+    private java.util.List<apresentacao.Contato> contatoList1;
+    private java.util.List<apresentacao.Contato> contatoList2;
+    private java.util.List<apresentacao.Contato> contatoList3;
     private javax.persistence.Query contatoQuery;
+    private javax.persistence.Query contatoQuery1;
+    private javax.persistence.Query contatoQuery2;
+    private javax.persistence.Query contatoQuery3;
     private javax.swing.JTextField email;
     private javax.swing.JTextField email1;
     private javax.persistence.EntityManager entityManager;
@@ -761,9 +748,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -771,9 +756,6 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -784,9 +766,8 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelBanner;
     private javax.swing.JList jList2;
-    private javax.swing.JList jList3;
+    private javax.swing.JList jListExcluir;
     private javax.swing.JPanel jPanelBanner;
-    private javax.swing.JPanel jPanelBuscarContantoExcluir;
     private javax.swing.JPanel jPanelBuscarContatoEditar;
     private javax.swing.JPanel jPanelCadastrarContato;
     private javax.swing.JPanel jPanelEditarContato;
@@ -802,7 +783,6 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTableContatos;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField nome;
     private javax.swing.JTextField nome1;
     private javax.swing.JTextField observcoes;
