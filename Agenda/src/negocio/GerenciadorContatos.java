@@ -8,6 +8,7 @@ package negocio;
 
 import dao.ContatoDAO;
 import entidades.contato.Contato;
+import fachada.FachadaSistema;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +28,28 @@ public class GerenciadorContatos {
             }
         }
         return contatosEncontrados;
+    }
+    
+    public void excluirContatoPorNome(String nomeContatoExcluir){
+        List<Contato> contatosBusca = FachadaSistema.getInstance().listarContatos();
+        
+        for (Contato contato : contatosBusca) {
+            if(contato.getNome().equals(nomeContatoExcluir)){
+                contatoDAO.excluir(contato);
+            }
+        }
+    }
+
+    public Contato buscarContatoSelecionadoPorNome(String nomeContato) {
+        List<Contato> contatosBusca = FachadaSistema.getInstance().listarContatos();
+        Contato contatoRetorno = new Contato();
+        
+        for (Contato contato : contatosBusca) {
+            if(contato.getNome().equals(nomeContato)){
+                contatoRetorno = contato;
+            }
+        }
+        return contatoRetorno;
     }
     
 }

@@ -27,6 +27,11 @@ public class Validacoes {
        if(contato.getTelefone1() == 0){
            JOptionPane.showMessageDialog(null, "O campo telefone 1 deve ser preenchido"); 
        }
+       
+       if(Integer.bitCount(contato.getTelefone1()) > 9){
+           JOptionPane.showMessageDialog(null, "O telefone de conter no máximo 9 dígitos");
+       }
+       
        if(null == contato.getEmail()){
            contato.setEmail("");
        }

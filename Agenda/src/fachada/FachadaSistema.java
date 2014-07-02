@@ -6,9 +6,11 @@
 
 package fachada;
 
+import apresentacao.Validacoes;
 import dao.ContatoDAO;
 import entidades.contato.Contato;
 import java.util.List;
+import negocio.GerenciadorContatos;
 
 /**
  *
@@ -17,9 +19,13 @@ import java.util.List;
 public class FachadaSistema { 
     private static FachadaSistema fachada = new FachadaSistema();
     private ContatoDAO contatoDAO;
+    private GerenciadorContatos gerenciador;
+    private Validacoes validacoes;
 
     private FachadaSistema() {
         this.contatoDAO = new ContatoDAO();
+        this.gerenciador = new GerenciadorContatos();
+        this.validacoes = new Validacoes();
     }
     
     public static FachadaSistema getInstance() {  
@@ -40,6 +46,14 @@ public class FachadaSistema {
     
     public List<Contato> listarContatos(){
         return this.contatoDAO.listarContatos();
+    }
+    
+    public void excluirContatoPorNome(String nomeContatoExcluir){
+        this.gerenciador.excluirContatoPorNome(nomeContatoExcluir);
+    }
+
+    public Contato buscarContatoSelecionadoPorNome(String nomeContato) {
+        return this.gerenciador.buscarContatoSelecionadoPorNome(nomeContato);
     }
     
 }
