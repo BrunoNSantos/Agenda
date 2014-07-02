@@ -80,30 +80,23 @@ public class TelaInicial extends javax.swing.JFrame {
         observcoes = new javax.swing.JTextField();
         salvar = new javax.swing.JButton();
         jPanelEditarContato = new javax.swing.JPanel();
-        jPanelBuscarContatoEditar = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox();
-        jButton6 = new javax.swing.JButton();
         jPanelExibirContatosBuscaEditar = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList();
+        jListEditar = new javax.swing.JList();
         jButton1 = new javax.swing.JButton();
         jPanelEditarContatoSelecionado = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        nome1 = new javax.swing.JTextField();
+        nomeEditar = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        tel_4 = new javax.swing.JTextField();
-        tel_5 = new javax.swing.JTextField();
-        tel_6 = new javax.swing.JTextField();
+        tel_1Editar = new javax.swing.JTextField();
+        tel_2Editar = new javax.swing.JTextField();
+        tel_3Editar = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        email1 = new javax.swing.JTextField();
+        emailEditar = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        observcoes1 = new javax.swing.JTextField();
+        observcoesEditar = new javax.swing.JTextField();
         salvar1 = new javax.swing.JButton();
         jPanelListarContatos = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -304,68 +297,13 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanelEditarContato.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Editar Contato", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Agency FB", 0, 18))); // NOI18N
         jPanelEditarContato.setLayout(new java.awt.CardLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setText("Busca de Contato");
-
-        jLabel8.setText("Valor:");
-
-        jLabel9.setText("Tipo de Busca:");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nome", "Telefone" }));
-
-        jButton6.setText("Buscar");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanelBuscarContatoEditarLayout = new javax.swing.GroupLayout(jPanelBuscarContatoEditar);
-        jPanelBuscarContatoEditar.setLayout(jPanelBuscarContatoEditarLayout);
-        jPanelBuscarContatoEditarLayout.setHorizontalGroup(
-            jPanelBuscarContatoEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelBuscarContatoEditarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelBuscarContatoEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(jPanelBuscarContatoEditarLayout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(227, 227, 227)
-                        .addComponent(jLabel9))
-                    .addGroup(jPanelBuscarContatoEditarLayout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(256, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBuscarContatoEditarLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanelBuscarContatoEditarLayout.setVerticalGroup(
-            jPanelBuscarContatoEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelBuscarContatoEditarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelBuscarContatoEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelBuscarContatoEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 207, Short.MAX_VALUE)
-                .addComponent(jButton6))
-        );
-
-        jPanelEditarContato.add(jPanelBuscarContatoEditar, "buscarContatoEditar");
-
-        jList2.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane3.setViewportView(jList2);
+        DefaultListModel listaEditar = new DefaultListModel();
+        List<Contato> listaContatosEditar = FachadaSistema.getInstance().listarContatos();
+        for(Contato contatoEditar: listaContatosEditar){
+            listaEditar.addElement(contatoEditar.getNome());
+        }
+        jListEditar.setModel(listaEditar);
+        jScrollPane3.setViewportView(jListEditar);
 
         jButton1.setText("Editar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -396,14 +334,14 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jLabel10.setText("* Nome:");
 
-        nome1.addActionListener(new java.awt.event.ActionListener() {
+        nomeEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nome1ActionPerformed(evt);
+                nomeEditarActionPerformed(evt);
             }
         });
-        nome1.addFocusListener(new java.awt.event.FocusAdapter() {
+        nomeEditar.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                nome1FocusLost(evt);
+                nomeEditarFocusLost(evt);
             }
         });
 
@@ -417,9 +355,9 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jLabel15.setText("Observações:");
 
-        observcoes1.addActionListener(new java.awt.event.ActionListener() {
+        observcoesEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                observcoes1ActionPerformed(evt);
+                observcoesEditarActionPerformed(evt);
             }
         });
 
@@ -440,7 +378,7 @@ public class TelaInicial extends javax.swing.JFrame {
                     .addGroup(jPanelEditarContatoSelecionadoLayout.createSequentialGroup()
                         .addGroup(jPanelEditarContatoSelecionadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14)
-                            .addComponent(email1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emailEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel15))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEditarContatoSelecionadoLayout.createSequentialGroup()
@@ -448,20 +386,20 @@ public class TelaInicial extends javax.swing.JFrame {
                         .addComponent(salvar1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelEditarContatoSelecionadoLayout.createSequentialGroup()
                         .addGroup(jPanelEditarContatoSelecionadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(observcoes1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(observcoesEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10)
-                            .addComponent(nome1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanelEditarContatoSelecionadoLayout.createSequentialGroup()
                                 .addGroup(jPanelEditarContatoSelecionadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tel_4, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tel_1Editar, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel11))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanelEditarContatoSelecionadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel13)
-                                    .addComponent(tel_5, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(tel_2Editar, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanelEditarContatoSelecionadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tel_6, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tel_3Editar, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel12))))
                         .addContainerGap(25, Short.MAX_VALUE))))
         );
@@ -471,7 +409,7 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addContainerGap(35, Short.MAX_VALUE)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nome1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanelEditarContatoSelecionadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
@@ -479,17 +417,17 @@ public class TelaInicial extends javax.swing.JFrame {
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelEditarContatoSelecionadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tel_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tel_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tel_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tel_1Editar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tel_3Editar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tel_2Editar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(email1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(emailEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(observcoes1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(observcoesEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(salvar1))
         );
@@ -524,9 +462,10 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanelListarContatos.setLayout(jPanelListarContatosLayout);
         jPanelListarContatosLayout.setHorizontalGroup(
             jPanelListarContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelListarContatosLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelListarContatosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 647, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanelListarContatosLayout.setVerticalGroup(
             jPanelListarContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -558,29 +497,37 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanelExibirContatosExcluir.setLayout(jPanelExibirContatosExcluirLayout);
         jPanelExibirContatosExcluirLayout.setHorizontalGroup(
             jPanelExibirContatosExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 657, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelExibirContatosExcluirLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanelExibirContatosExcluirLayout.createSequentialGroup()
+                .addGroup(jPanelExibirContatosExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 647, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelExibirContatosExcluirLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanelExibirContatosExcluirLayout.setVerticalGroup(
             jPanelExibirContatosExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelExibirContatosExcluirLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                .addComponent(jButton7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addComponent(jButton7)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanelExcluirContatoLayout = new javax.swing.GroupLayout(jPanelExcluirContato);
         jPanelExcluirContato.setLayout(jPanelExcluirContatoLayout);
         jPanelExcluirContatoLayout.setHorizontalGroup(
             jPanelExcluirContatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelExibirContatosExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanelExcluirContatoLayout.createSequentialGroup()
+                .addComponent(jPanelExibirContatosExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelExcluirContatoLayout.setVerticalGroup(
-            jPanelExcluirContatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelExibirContatosExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            jPanelExcluirContatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(jPanelExcluirContatoLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jPanelExibirContatosExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanelPrincipal.add(jPanelExcluirContato, "excluirContato");
@@ -611,6 +558,8 @@ public class TelaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        jTableContatos.revalidate();
+        jTableContatos.repaint();
         mostrarTela("listarContatos");
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -650,47 +599,72 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        jPanelExcluirContato.revalidate();
+        jPanelExcluirContato.repaint();
         mostrarTela("excluirContato");
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void nome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nome1ActionPerformed
+    private void nomeEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeEditarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nome1ActionPerformed
+    }//GEN-LAST:event_nomeEditarActionPerformed
 
-    private void nome1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nome1FocusLost
+    private void nomeEditarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nomeEditarFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_nome1FocusLost
+    }//GEN-LAST:event_nomeEditarFocusLost
 
-    private void observcoes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_observcoes1ActionPerformed
+    private void observcoesEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_observcoesEditarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_observcoes1ActionPerformed
+    }//GEN-LAST:event_observcoesEditarActionPerformed
 
     private void salvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvar1ActionPerformed
-        // TODO add your handling code here:
+        Contato contatoSelecionado = FachadaSistema.getInstance().buscarContatoSelecionadoPorNome(jListEditar.getSelectedValue().toString());
+        Contato contatoAlterar = new Contato();
+        
+        contatoAlterar.setId(contatoSelecionado.getId());
+        contatoAlterar.setNome(nomeEditar.getText());
+        contatoAlterar.setEmail(emailEditar.getText());
+        contatoAlterar.setTelefone1(Integer.parseInt(tel_1Editar.getText()));
+        contatoAlterar.setTelefone2(Integer.parseInt(tel_2Editar.getText()));
+        contatoAlterar.setTelefone3(Integer.parseInt(tel_3Editar.getText()));
+        contatoAlterar.setObservacoes(observcoesEditar.getText());
+        
+        FachadaSistema.getInstance().alterarContato(contatoAlterar);
+        
+        JOptionPane.showMessageDialog(null, "Contato Alterado com Sucesso!");
+        
+        
     }//GEN-LAST:event_salvar1ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        mostrarTelaEditar("exibirContatosEditar");
-    }//GEN-LAST:event_jButton6ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Contato contatoSelecionado = FachadaSistema.getInstance().buscarContatoSelecionadoPorNome(jListEditar.getSelectedValue().toString());
+        nomeEditar.setText(contatoSelecionado.getNome());
+        tel_1Editar.setText(String.valueOf(contatoSelecionado.getTelefone1()));
+        tel_2Editar.setText(String.valueOf(contatoSelecionado.getTelefone2()));
+        tel_3Editar.setText(String.valueOf(contatoSelecionado.getTelefone3()));
+        emailEditar.setText(contatoSelecionado.getEmail());
+        observcoesEditar.setText(contatoSelecionado.getObservacoes());
         mostrarTelaEditar("editarContatoSelecionado");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir: "+jListExcluir.getSelectedValue());
-        FachadaSistema.getInstance().excluirContatoPorNome(jListExcluir.getSelectedValue().toString());
-        jPanelExcluirContato.revalidate();
-        jPanelExcluirContato.repaint();
-        
-        DefaultListModel listaExcluir = new DefaultListModel();
-        List<Contato> listaContatos = FachadaSistema.getInstance().listarContatos();
-        for(Contato contatoExcluir: listaContatos){
-            listaExcluir.addElement(contatoExcluir.getNome());
+        if(null != jListExcluir.getSelectedValue()){
+            if(JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir: "+jListExcluir.getSelectedValue()) == 0){
+                FachadaSistema.getInstance().excluirContatoPorNome(jListExcluir.getSelectedValue().toString());
+                jPanelExcluirContato.revalidate();
+                jPanelExcluirContato.repaint();
+
+                DefaultListModel listaExcluir = new DefaultListModel();
+                List<Contato> listaContatos = FachadaSistema.getInstance().listarContatos();
+                for(Contato contatoExcluir: listaContatos){
+                    listaExcluir.addElement(contatoExcluir.getNome());
+                }
+                jListExcluir.setModel(listaExcluir);
+                JOptionPane.showMessageDialog(null,"Contato excluido com sucesso");
+            }
         }
-        jListExcluir.setModel(listaExcluir);
-        JOptionPane.showMessageDialog(null,"Contato excluido com sucesso");
-        
+        else{
+            JOptionPane.showMessageDialog(null, "Escolha o contato que você deseja excluir");
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
@@ -739,17 +713,14 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.persistence.Query contatoQuery2;
     private javax.persistence.Query contatoQuery3;
     private javax.swing.JTextField email;
-    private javax.swing.JTextField email1;
+    private javax.swing.JTextField emailEditar;
     private javax.persistence.EntityManager entityManager;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -762,13 +733,10 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelBanner;
-    private javax.swing.JList jList2;
+    private javax.swing.JList jListEditar;
     private javax.swing.JList jListExcluir;
     private javax.swing.JPanel jPanelBanner;
-    private javax.swing.JPanel jPanelBuscarContatoEditar;
     private javax.swing.JPanel jPanelCadastrarContato;
     private javax.swing.JPanel jPanelEditarContato;
     private javax.swing.JPanel jPanelEditarContatoSelecionado;
@@ -782,19 +750,18 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTableContatos;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField nome;
-    private javax.swing.JTextField nome1;
+    private javax.swing.JTextField nomeEditar;
     private javax.swing.JTextField observcoes;
-    private javax.swing.JTextField observcoes1;
+    private javax.swing.JTextField observcoesEditar;
     private javax.swing.JButton salvar;
     private javax.swing.JButton salvar1;
     private javax.swing.JTextField tel_1;
+    private javax.swing.JTextField tel_1Editar;
     private javax.swing.JTextField tel_2;
+    private javax.swing.JTextField tel_2Editar;
     private javax.swing.JTextField tel_3;
-    private javax.swing.JTextField tel_4;
-    private javax.swing.JTextField tel_5;
-    private javax.swing.JTextField tel_6;
+    private javax.swing.JTextField tel_3Editar;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
