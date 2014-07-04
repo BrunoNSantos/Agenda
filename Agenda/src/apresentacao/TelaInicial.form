@@ -501,7 +501,7 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="observcoesEditar" alignment="0" min="-2" pref="378" max="-2" attributes="0"/>
+                                      <Component id="observcoes1" alignment="0" min="-2" pref="378" max="-2" attributes="0"/>
                                       <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="nomeEditar" alignment="0" min="-2" pref="302" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
@@ -553,7 +553,7 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="observcoesEditar" min="-2" pref="44" max="-2" attributes="0"/>
+                          <Component id="observcoes1" min="-2" pref="44" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="salvar1" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -605,9 +605,9 @@
                     <Property name="text" type="java.lang.String" value="Observa&#xe7;&#xf5;es:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="observcoesEditar">
+                <Component class="javax.swing.JTextField" name="observcoes1">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="observcoesEditarActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="observcoes1ActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="salvar1">

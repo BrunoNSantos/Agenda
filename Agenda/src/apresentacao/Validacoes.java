@@ -28,7 +28,7 @@ public class Validacoes {
            JOptionPane.showMessageDialog(null, "O campo telefone 1 deve ser preenchido"); 
        }
        
-       if(Integer.bitCount(contato.getTelefone1()) > 9){
+       if(String.valueOf(contato.getTelefone1()).length() > 9){
            JOptionPane.showMessageDialog(null, "O telefone de conter no máximo 9 dígitos");
        }
        

@@ -96,7 +96,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         emailEditar = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        observcoesEditar = new javax.swing.JTextField();
+        observcoes1 = new javax.swing.JTextField();
         salvar1 = new javax.swing.JButton();
         jPanelListarContatos = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -355,9 +355,9 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jLabel15.setText("Observações:");
 
-        observcoesEditar.addActionListener(new java.awt.event.ActionListener() {
+        observcoes1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                observcoesEditarActionPerformed(evt);
+                observcoes1ActionPerformed(evt);
             }
         });
 
@@ -386,7 +386,7 @@ public class TelaInicial extends javax.swing.JFrame {
                         .addComponent(salvar1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelEditarContatoSelecionadoLayout.createSequentialGroup()
                         .addGroup(jPanelEditarContatoSelecionadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(observcoesEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(observcoes1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10)
                             .addComponent(nomeEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanelEditarContatoSelecionadoLayout.createSequentialGroup()
@@ -427,7 +427,7 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(observcoesEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(observcoes1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(salvar1))
         );
@@ -558,8 +558,8 @@ public class TelaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jTableContatos.revalidate();
-        jTableContatos.repaint();
+        jPanelListarContatos.revalidate();
+        jPanelListarContatos.repaint();
         mostrarTela("listarContatos");
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -612,9 +612,9 @@ public class TelaInicial extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nomeEditarFocusLost
 
-    private void observcoesEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_observcoesEditarActionPerformed
+    private void observcoes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_observcoes1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_observcoesEditarActionPerformed
+    }//GEN-LAST:event_observcoes1ActionPerformed
 
     private void salvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvar1ActionPerformed
         Contato contatoSelecionado = FachadaSistema.getInstance().buscarContatoSelecionadoPorNome(jListEditar.getSelectedValue().toString());
@@ -626,12 +626,13 @@ public class TelaInicial extends javax.swing.JFrame {
         contatoAlterar.setTelefone1(Integer.parseInt(tel_1Editar.getText()));
         contatoAlterar.setTelefone2(Integer.parseInt(tel_2Editar.getText()));
         contatoAlterar.setTelefone3(Integer.parseInt(tel_3Editar.getText()));
-        contatoAlterar.setObservacoes(observcoesEditar.getText());
+        contatoAlterar.setObservacoes(observcoes1.getText());
         
         FachadaSistema.getInstance().alterarContato(contatoAlterar);
         
         JOptionPane.showMessageDialog(null, "Contato Alterado com Sucesso!");
-        
+        jPanelEditarContato.revalidate();
+        jPanelEditarContato.repaint();
         
     }//GEN-LAST:event_salvar1ActionPerformed
 
@@ -642,7 +643,7 @@ public class TelaInicial extends javax.swing.JFrame {
         tel_2Editar.setText(String.valueOf(contatoSelecionado.getTelefone2()));
         tel_3Editar.setText(String.valueOf(contatoSelecionado.getTelefone3()));
         emailEditar.setText(contatoSelecionado.getEmail());
-        observcoesEditar.setText(contatoSelecionado.getObservacoes());
+        observcoes1.setText(contatoSelecionado.getObservacoes());
         mostrarTelaEditar("editarContatoSelecionado");
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -753,7 +754,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JTextField nome;
     private javax.swing.JTextField nomeEditar;
     private javax.swing.JTextField observcoes;
-    private javax.swing.JTextField observcoesEditar;
+    private javax.swing.JTextField observcoes1;
     private javax.swing.JButton salvar;
     private javax.swing.JButton salvar1;
     private javax.swing.JTextField tel_1;
