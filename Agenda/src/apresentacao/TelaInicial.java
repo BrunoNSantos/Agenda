@@ -98,6 +98,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         observcoes1 = new javax.swing.JTextField();
         salvar1 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jPanelListarContatos = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableContatos = new javax.swing.JTable();
@@ -374,6 +375,13 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setText("Voltar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelEditarContatoSelecionadoLayout = new javax.swing.GroupLayout(jPanelEditarContatoSelecionado);
         jPanelEditarContatoSelecionado.setLayout(jPanelEditarContatoSelecionadoLayout);
         jPanelEditarContatoSelecionadoLayout.setHorizontalGroup(
@@ -389,6 +397,8 @@ public class TelaInicial extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEditarContatoSelecionadoLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(salvar1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelEditarContatoSelecionadoLayout.createSequentialGroup()
                         .addGroup(jPanelEditarContatoSelecionadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -435,7 +445,9 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(observcoes1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(salvar1))
+                .addGroup(jPanelEditarContatoSelecionadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(salvar1)
+                    .addComponent(jButton6)))
         );
 
         jPanelEditarContato.add(jPanelEditarContatoSelecionado, "editarContatoSelecionado");
@@ -651,6 +663,11 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanelEditarContato.revalidate();
         jPanelEditarContato.repaint();
         
+        jPanelListarContatos.revalidate();
+        jPanelListarContatos.repaint();
+        
+        mostrarTelaEditar("exibirContatosEditar");
+        
     }//GEN-LAST:event_salvar1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -698,6 +715,10 @@ public class TelaInicial extends javax.swing.JFrame {
     private void tel_1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tel_1KeyReleased
 
     }//GEN-LAST:event_tel_1KeyReleased
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        mostrarTelaEditar("exibirContatosEditar");
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -752,6 +773,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
