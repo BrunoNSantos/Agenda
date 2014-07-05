@@ -207,9 +207,15 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jLabel3.setText("* Tel1:");
 
-        jLabel4.setText("* Tel3:");
+        jLabel4.setText("Tel3:");
 
-        jLabel5.setText("* Tel2:");
+        jLabel5.setText(" Tel2:");
+
+        tel_1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tel_1KeyReleased(evt);
+            }
+        });
 
         jLabel6.setText("E-mail:");
 
@@ -566,13 +572,24 @@ public class TelaInicial extends javax.swing.JFrame {
     private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed
         Contato contato = new Contato();
         contato.setNome(nome.getText());
-        contato.setTelefone1(Integer.parseInt(tel_1.getText()));
-        contato.setTelefone2(Integer.parseInt(tel_2.getText()));
-        contato.setTelefone3(Integer.parseInt(tel_3.getText()));
+        if((null != tel_1.getText()) &&  !(tel_1.getText().isEmpty())){
+            contato.setTelefone1(Integer.parseInt(tel_1.getText()));
+        }
+        if((null != tel_2.getText()) &&  !(tel_2.getText().isEmpty())){
+            contato.setTelefone2(Integer.parseInt(tel_2.getText()));
+        }
+        if((null != tel_3.getText()) &&  !(tel_3.getText().isEmpty())){
+            contato.setTelefone3(Integer.parseInt(tel_3.getText()));
+        }    
         contato.setEmail(email.getText());
         contato.setObservacoes(observcoes.getText());
-        FachadaSistema.getInstance().adicionarContato(new Validacoes().validarContato(contato));
-        JOptionPane.showMessageDialog(null, "Contato adicionado!");
+        if(FachadaSistema.getInstance().validarContato(contato)){
+            FachadaSistema.getInstance().adicionarContato(contato);
+            JOptionPane.showMessageDialog(null, "Contato adicionado!");
+            limparTela();
+        }
+        
+        
     }//GEN-LAST:event_salvarActionPerformed
 
     private void observcoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_observcoesActionPerformed
@@ -667,6 +684,20 @@ public class TelaInicial extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Escolha o contato que você deseja excluir");
         }
     }//GEN-LAST:event_jButton7ActionPerformed
+    public void limparTela(){
+        nome.setText("");
+        tel_1.setText("");
+        tel_2.setText("");
+        tel_3.setText("");
+        email.setText("");
+        observcoes.setText("");
+        
+        jPanelCadastrarContato.revalidate();
+        jPanelCadastrarContato.repaint();
+    }
+    private void tel_1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tel_1KeyReleased
+
+    }//GEN-LAST:event_tel_1KeyReleased
 
     /**
      * @param args the command line arguments

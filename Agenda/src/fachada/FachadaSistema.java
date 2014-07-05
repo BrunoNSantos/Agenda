@@ -55,5 +55,9 @@ public class FachadaSistema {
     public Contato buscarContatoSelecionadoPorNome(String nomeContato) {
         return this.gerenciador.buscarContatoSelecionadoPorNome(nomeContato);
     }
+
+    public boolean validarContato(Contato contato) {
+        return this.validacoes.validarContato(contato);
+    }
     
 }
